@@ -1,0 +1,120 @@
+{% extends 'library/base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<!--<h2 class="mb-4" text-primary-emphasis fw-bold">Dashboard</h2>-->
+<!--<h2 class="mb-4 fw-bold" style="color: #032034e8; font-weight: 700;">Dashboard</h2>-->
+<h2 class="mb-4 fw-bold" style="color: #1E293B;">
+    Dashboard
+</h2>
+
+
+<div class="row g-3 mb-4">
+  <div class="col-md-3">
+    <!-- <div class="card text-white bg-primary bg-body-secondary text-dark shadow-sm"> -->
+<!--      <div class="card bg-body-secondary text-dark shadow-sm">-->
+  <div class="card text-dark shadow-sm border-0"
+     style="background-color: #FFFFFF; border-top: 4px solid #4F46E5 !important; border-radius: 12px;">
+
+      <div class="card-body">
+        <!--<h6 class="card-title">Total Books</h6>-->
+        <h6 class="card-title fw-bold" style="color: #404A57;">
+          Total Books
+        </h6>
+        <!--<p class="display-6 mb-0">{{ total_books }}</p>-->
+        <p class="display-6 mb-0 fw-bold" style="color: #0F172A;">
+          {{ total_books }}
+       </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <!--<div class="card text-white bg-success shadow-sm"> -->
+      <!--<div class="card bg-body-secondary text-dark shadow-sm">-->
+      <div class="card text-dark shadow-sm border-0"
+          style="background-color: #FFFFFF;border-top: 4px solid #7C3AED !important; border-radius: 12px;">
+
+       <div class="card-body">
+        <h6 class="card-title fw-bold" style="color: #404A57;">Total Members</h6>
+        <p class="display-6 mb-0">{{ total_members }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <!--<div class="card text-white bg-warning shadow-sm">-->
+      <!--<div class="card bg-body-secondary text-dark shadow-sm">-->
+        <div class="card text-dark shadow-sm border-0"
+     style="background-color: #FFFFFF;border-top: 4px solid #0891B2 !important; border-radius: 12px;">
+      <div class="card-body">
+        <h6 class="card-title fw-bold" style="color: #404A57;">Issued Books</h6>
+        <p class="display-6 mb-0">{{ total_issued }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <!--<div class="card text-white bg-info shadow-sm">-->
+      <!--<div class="card bg-body-secondary text-dark shadow-sm">-->
+        <div class="card text-dark shadow-sm border-0"
+     style="background-color: #FFFFFF; border-top: 4px solid #059669 !important; border-radius: 12px;">
+            <div class="card-body">
+        <h6 class="card-title fw-bold" style="color: #404A57;">Available Copies</h6>
+        <p class="display-6 mb-0">{{ total_available }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-3">
+    <!--<div class="card text-white bg-danger shadow-sm">-->
+      <!--<div class="card bg-body-secondary text-dark shadow-sm">-->
+           <div class="card text-dark shadow-sm border-0"
+     style="background-color: #FFFFFF;border-top: 4px solid #E11D48 !important; border-radius: 12px;">
+      <div class="card-body">
+        <h6 class="card-title fw-bold" style="color: #404A57;">Overdue Books</h6>
+        <p class="display-6 mb-0">{{ overdue_count }}</p>
+        <!--<a href="{% url 'overdue_books' %}" class="text-dark">View overdue &rarr;</a>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-header fw-bold py-3"
+     style="background-color: #f1f5f9; color:  #1e293b;">Recent Issues</div>
+      <ul class="list-group list-group-flush">
+        {% for r in recent_issues %}
+        <li class="list-group-item d-flex justify-content-between">
+          <span class=" fw-bold text-dar">{{ r.book.title }} &rarr; {{ r.member.name }}</span>
+          <span class="text-muted">{{ r.issue_date }}</span>
+        </li>
+        {% empty %}
+        <li class="list-group-item text-muted">No issues yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-header fw-bold py-3"
+     style="background-color: #F1F5F9; color:  #1e293b;">Recent Returns</div>
+      <ul class="list-group list-group-flush">
+        {% for r in recent_returns %}
+        <li class="list-group-item d-flex justify-content-between">
+          <span class=" fw-bold text-dark">{{ r.book.title }} &larr; {{ r.member.name }}</span>
+          <span class="text-muted">{{ r.return_date }}</span>
+        </li>
+        {% empty %}
+        <li class="list-group-item text-muted">No returns yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %} 
+
+
+
+
+

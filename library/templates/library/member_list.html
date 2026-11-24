@@ -1,0 +1,43 @@
+{% extends 'library/base.html' %}
+{% block title %}Members{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center ">
+  <h2 class="mb-4 fw-bold" style="color: #032034e8; font-weight: 700;">Members</h2>
+  <a href="{% url 'member_add' %}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Add Member</a>
+</div>
+
+<form method="get" class="row g-2 mb-3">
+  <div class="col-md-6">
+    <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="Search by name, email or phone">
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-outline-secondary">Search</button>
+    {% if query %}<a href="{% url 'member_list' %}" class="btn btn-outline-danger">Clear</a>{% endif %}
+  </div>
+</form>
+
+<div class="table-responsive">
+<table class="table table-hover align-middle bg-white shadow-sm">
+  <thead class="table-light">
+    <tr><th>Name</th><th>Email</th><th>Phone</th><th>Course</th><th>Semester/Year</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    {% for member in members %}
+    <tr>
+      <td><a href="{% url 'member_detail' member.pk %}">{{ member.name }}</a></td>
+      <td>{{ member.email }}</td>
+      <td>{{ member.phone }}</td>
+      <td>{{ member.course }}</td>
+      <td>{{ member.semester }}</td>
+      <td>
+        <a href="{% url 'member_edit' member.pk %}" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil"></i></a>
+        <a href="{% url 'member_delete' member.pk %}" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6" class="text-center text-muted">No members found.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

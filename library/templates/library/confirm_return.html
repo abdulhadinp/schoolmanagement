@@ -1,0 +1,15 @@
+{% extends 'library/base.html' %}
+{% block title %}Confirm Return{% endblock %}
+{% block content %}
+<h2 class="mb-4">Confirm Return</h2>
+<div class="card shadow-sm" style="max-width: 600px;">
+  <div class="card-body">
+    <p>Mark <strong>{{ record.book.title }}</strong> issued to <strong>{{ record.member.name }}</strong> as returned today?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">Yes, mark as returned</button>
+      <a href="{% url 'issued_books' %}" class="btn btn-outline-secondary">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,200 @@
+body {
+    background-color: #F7F5F0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+.sidebar {
+    width: 260px;
+    min-width: 260px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    background-color: #10182c;}
+
+
+
+
+.sidebar .nav-link {
+    border-radius: 6px;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background-color: #4e4d4c;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.display-6 {
+    font-weight: 700;
+}
+
+/* =========================
+   LIBRARY SIDEBAR DESIGN
+   ========================= */
+
+/*.sidebar {
+    position: relative;
+    overflow: hidden;
+    width: 280px;
+    min-height: 100vh;
+    border-right: 1px solid #f1d7b5;
+}
+
+
+/* Orange big circle */
+
+/*.sidebar-circle {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    background-color: #F99E1B;
+    border-radius: 50%;
+    top: -55px;
+    left: -45px;
+    z-index: 0;
+}
+
+
+/* Small orange dots */
+
+/*.sidebar-dot {
+    position: absolute;
+    background-color: #F99E1B;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.sidebar-dot-1 {
+    width: 18px;
+    height: 18px;
+    top: 65px;
+    right: 22px;
+}
+
+.sidebar-dot-2 {
+    width: 12px;
+    height: 12px;
+    top: 105px;
+    right: 45px;
+}
+
+
+/* Keep sidebar content above decoration */
+
+/*.sidebar h4,
+.sidebar ul {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Library MS */
+
+/*.sidebar h4 {
+    padding: 8px;
+    margin-bottom: 25px !important;
+    font-weight: 800;
+}
+
+.sidebar h4 i {
+    color: #F99E1B;
+}
+
+
+/* Menu */
+
+/*.sidebar .nav {
+    gap: 7px !important;
+}
+
+
+/* Normal menu item */
+
+/*.sidebar-link {
+    display: flex !important;
+    align-items: center;
+
+    padding: 11px 16px !important;
+
+    color: #4A4A4A !important;
+
+    border-radius: 14px !important;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}*/
+
+
+/* Icons */
+
+/*.sidebar-link i {
+    width: 24px;
+    margin-right: 7px;
+    font-size: 17px;
+}*/
+
+
+/* Hover */
+
+/*.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    color: #F99E1B !important;
+
+    transform: translateX(4px);
+}*/
+
+
+/* Active menu */
+
+/*.sidebar-link.active {
+    background-color: #FFFFFF !important;
+    color: #F99E1B !important;
+
+    font-weight: 700;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}*/
+
+
+/* Active icon */
+
+/*.sidebar-link.active i {
+    color: #F99E1B;
+}*/
+
+
+/* Logout */
+
+/*.sidebar .nav-item:last-child {
+    margin-top: 30px !important;
+}
+
+.sidebar .btn {
+    transition: 0.2s ease;
+}
+
+.sidebar .btn:hover {
+    background-color: #DC3545 !important;
+    color: white !important;
+}
+.display-6 {
+    font-weight: 700;}*/
+   
+/*.sidebar {
+    width: 260px;
+    min-width: 260px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    background-color: #E2E8F0;}*/
