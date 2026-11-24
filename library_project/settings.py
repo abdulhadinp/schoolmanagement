@@ -24,7 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4+sdip3)1wpb2a$8b0cj!=dxvwf!4($q)xdmhf^gwz0*bv$tgf'
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app', 'schoolmanagement-blush-seven.vercel.app', '*']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.vercel.app',
+    'https://schoolmanagement-blush-seven.vercel.app',
+]
 
 # Application definition
 
